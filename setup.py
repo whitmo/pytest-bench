@@ -8,7 +8,7 @@ from pkgutil import get_importer
 BASE_DIR = path.abspath(path.dirname(__file__))
 
 # Navigate, import, and retrieve the metadata of the project.
-_imp = get_importer(path.join(BASE_DIR, 'src', 'pytest_bench'))
+_imp = get_importer(path.join(BASE_DIR, 'pytest_bench'))
 meta = _imp.find_module('meta').load_module('meta')
 
 setup(
@@ -28,8 +28,8 @@ setup(
     author_email='support@concordusapps.com',
     url='http://github.com/concordusapps/pytest-bench',
     # scripts=['bin/pytest_bench'],
-    package_dir={'pytest_bench': 'src/pytest_bench'},
-    packages=find_packages(path.join(BASE_DIR, 'src')),
+    package_dir={'pytest_bench': 'pytest_bench'},
+    packages=find_packages(BASE_DIR),
     entry_points={'pytest11': ['pytest_bench = pytest_bench.plugin']},
     install_requires=(
         'pytest',
